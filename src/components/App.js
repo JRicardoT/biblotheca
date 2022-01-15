@@ -16,7 +16,7 @@ const App = () => {
   return (
     <main>
       <NavBar />
-      <BooksContainer />
+      <BooksContainer books={books}/>
     </main>
   );
 }
