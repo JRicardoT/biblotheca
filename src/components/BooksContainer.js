@@ -12,6 +12,7 @@ const BooksContainer = ({ books }) => {
         description={book.description}
         publisher={book.publisher}
         title={book.title}
+        id={book.title}
         key={book.title}
       />
     )
