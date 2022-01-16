@@ -1,15 +1,24 @@
 import React from "react";
+import Book from "./Book";
+import "./BooksContainer.css"
 
 const BooksContainer = ({ books }) => {
-  console.log(books)
-  const booksToDisplay = books.map(books => {
+  const booksToDisplay = books.map(book => {
     return (
-      <Book />
+      <Book 
+        author={book.author}
+        bookImage={book.book_image}
+        bookBuyLink={book.buy_links[0].url}
+        description={book.description}
+        publisher={book.publisher}
+        title={book.title}
+        key={book.title}
+      />
     )
   });
   return (
-    <section>
-      hello
+    <section className="books-container">
+      {booksToDisplay}
     </section>
   )
 }
