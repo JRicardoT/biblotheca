@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import NavBar from "./NavBar";
 import BooksContainer from "./BooksContainer";
+import BookDetails from "./BookDetails";
 import { getBooks } from "../apiCalls";
+import { Route, Routes } from "react-router-dom";
 
 const App = () => {
   const [books, setBooks] = useState([]);
@@ -16,7 +18,12 @@ const App = () => {
   return (
     <main>
       <NavBar />
-      <BooksContainer books={books}/>
+      <Routes>
+        <Route path='/' element={<BooksContainer books={books} />} />
+        <Route path='/details' element={<BookDetails books={books}/>}>
+          <Route path='/details/:id' element={<BookDetails />}/>
+        </Route>
+      </Routes>
     </main>
   );
 }
