@@ -3,6 +3,7 @@ import "./App.css";
 import NavBar from "./NavBar";
 import BooksContainer from "./BooksContainer";
 import { getBooks } from "../apiCalls";
+import { Route, Routes } from "react-router-dom";
 
 const App = () => {
   const [books, setBooks] = useState([]);
@@ -16,7 +17,10 @@ const App = () => {
   return (
     <main>
       <NavBar />
-      <BooksContainer books={books}/>
+      <Routes>
+        <Route path='/' element={<BooksContainer books={books}/>} />
+        <Route path='/book-details' element={<BookDetails />}></Route>
+      </Routes>
     </main>
   );
 }
