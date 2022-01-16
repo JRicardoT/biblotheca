@@ -1,0 +1,43 @@
+
+h1 {
+  font-size: 40px;
+  color: #416A59;
+}
+
+input {
+  width: 75%;
+  height: 25%;
+  border: none;
+  border-radius: 10px 0 0 10px;
+}
+
+.nav-bar {
+  background-color: #f5eec2;
+  display: flex;
+  font-family: 'Source Serif Pro', serif;
+  font-weight: bold;
+  height: 12vh;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.title-links {
+  display: flex;
+  align-items: center;
+  width: 25%;
+  justify-content: space-evenly;
+}
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  width: 20%;
+}
+
+.submit-search {
+  height: 26%;
+  border-radius: 0 10px 10px 0;
+  border: none;
+  background-color: #416a59;
+  color: white;
+}

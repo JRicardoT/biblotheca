@@ -1,0 +1,7 @@
+.books-container {
+  display: flex;
+  grid-gap: 25px;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 5%;
+}
