@@ -5,10 +5,14 @@ import BooksContainer from "./BooksContainer";
 import BookDetails from "./BookDetails";
 import { getBooks } from "../apiCalls";
 import { Route, Routes } from "react-router-dom";
+import FavoriteBooks from "./FavoriteBooks";
 
 const App = () => {
   const [books, setBooks] = useState([]);
-  const [favoriteBooks, setFavoriteBooks] = useState([]);
+  const [favoriteBooks, setFavoriteBooks] = useState(() => {
+    const storedBooks = localStorage.getItem('favoriteBooks');
+    return storedBooks ? JSON.parse(storedBooks) : [];
+  });
 
   useEffect(() => {
     getBooks()
