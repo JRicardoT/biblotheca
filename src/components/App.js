@@ -8,8 +8,9 @@ import { Route, Routes } from "react-router-dom";
 
 const App = () => {
   const [books, setBooks] = useState([]);
+  const [favoriteBooks, setFavoriteBooks] = useState([]);
 
-  useEffect (() => {
+  useEffect(() => {
     getBooks()
     .then(data => setBooks(data.results.books))
   }, [])
