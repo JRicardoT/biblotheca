@@ -15,6 +15,7 @@ const BooksContainer = ({ books, favoriteBook }) => {
       />
     )
   });
+  
   return (
     <section className="books-container">
       {booksToDisplay}

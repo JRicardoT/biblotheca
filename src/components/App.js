@@ -40,6 +40,7 @@ const App = () => {
         <Route path='/details' element={<BookDetails books={books} />}>
           <Route path='/details/:id' element={<BookDetails />}/>
         </Route>
+        <Route path='favorite-books' element={<FavoriteBooks favoriteBooks={favoriteBooks}/>}/>
       </Routes>
     </main>
   );
