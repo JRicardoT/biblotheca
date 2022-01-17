@@ -15,6 +15,18 @@ const App = () => {
     .then(data => setBooks(data.results.books))
   }, [])
 
+  useEffect(() => {
+    localStorage.setItem(`favoriteBooks`, JSON.stringify(favoriteBooks));
+  }, [favoriteBooks])
+
+  const favoriteBook = (bookId) => {
+    const favBook = books.find(book => book.title === bookId);
+    if(!favoriteBooks.includes(favBook)) {
+      setFavoriteBooks([...favoriteBooks, favBook])
+    }
+  }
+  
+  console.log('outside>>>>',favoriteBooks)
   console.log("outside of effect", books)
   return (
     <main>
