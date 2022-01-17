@@ -1,12 +1,12 @@
 import React from "react";
-import Book from "./Book";
+import FavBook from "./FavBook";
 
 const FavoriteBooks = ({ favoriteBooks }) => {
   // const storedBooks = localStorage.getItem('favoriteBooks');
   console.log(favoriteBooks)
   const booksToDisplay = favoriteBooks.map(book => {
     return (
-      <Book 
+      <FavBook
         author={book.author}
         bookImage={book.book_image}
         title={book.title}
