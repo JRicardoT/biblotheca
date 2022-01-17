@@ -8,7 +8,7 @@ const NavBar = () => {
       <div className="title-links">
         <h1>Bibliotheca</h1>
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/">Favorites</NavLink>       
+        <NavLink to="/favorite-books">Favorites</NavLink>       
       </div>
       <form className="search-bar-container">
         <input type="text"></input>
