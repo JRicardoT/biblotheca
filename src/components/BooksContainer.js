@@ -2,7 +2,7 @@ import React from "react";
 import Book from "./Book";
 import "./BooksContainer.css"
 
-const BooksContainer = ({ books }) => {
+const BooksContainer = ({ books, favoriteBook }) => {
   const booksToDisplay = books.map(book => {
     return (
       <Book 
@@ -11,6 +11,7 @@ const BooksContainer = ({ books }) => {
         title={book.title}
         id={book.title}
         key={book.title}
+        favoriteBook={favoriteBook}
       />
     )
   });

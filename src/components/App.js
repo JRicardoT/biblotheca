@@ -32,8 +32,8 @@ const App = () => {
     <main>
       <NavBar />
       <Routes>
-        <Route path='/' element={<BooksContainer books={books} />} />
-        <Route path='/details' element={<BookDetails books={books}/>}>
+        <Route path='/' element={<BooksContainer books={books} favoriteBook={favoriteBook} />} />
+        <Route path='/details' element={<BookDetails books={books} />}>
           <Route path='/details/:id' element={<BookDetails />}/>
         </Route>
       </Routes>
