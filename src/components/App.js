@@ -14,12 +14,12 @@ const App = () => {
     const storedBooks = localStorage.getItem('favoriteBooks');
     return storedBooks ? JSON.parse(storedBooks) : [];
   });
-  const [urlEndPoint, setUrlEndPoint] = useState();
+  // const [urlEndPoint, setUrlEndPoint] = useState();
 
   useEffect(() => {
-    getBooks(urlEndPoint)
+    getBooks()
     .then(data => setBooks(data.results.books))
-  }, [urlEndPoint])
+  }, [])
 
   useEffect(() => {
     localStorage.setItem('favoriteBooks', JSON.stringify(favoriteBooks));
@@ -37,25 +37,27 @@ const App = () => {
     setFavoriteBooks(filteredFavoriteBooks);
   }
 
-  const updateBooks = (endPoint) => {
-    setUrlEndPoint(endPoint);
+  const updateBooks = (newBooks) => {
+    console.log("updating", newBooks)
+    setBooks(newBooks)
   }
 
-  const displayHome = (endPoint) => {
-    setUrlEndPoint(endPoint)
-  }
+  // const displayHome = (endPoint) => {
+  //   setUrlEndPoint(endPoint)
+  // }
   
   return (
     <main>
-      <NavBar updateBooks={updateBooks} displayHome={displayHome} />
+      <NavBar />
       <Routes>
-        <Route path='/' element={<BooksContainer books={books} favoriteBook={favoriteBook} />} >
-          <Route path='/non-fiction' element={<BooksContainer />}/>
-          <Route path='/fiction' element={<BooksContainer />}/>
-          <Route path='/audio' element={<BooksContainer />}/>
-          <Route path='/kids' element={<BooksContainer />}/>
-          <Route path='/manga' element={<BooksContainer />}/>
-          <Route path='/games-activities' element={<BooksContainer />}/>
+        <Route path='/' element={<BooksContainer books={books} favoriteBook={favoriteBook} updateBooks={updateBooks}/>} >
+          <Route path='/:id' element={<BooksContainer />}/>
+          <Route path='/non-fiction/:id' element={<BooksContainer />}/>
+          <Route path='/fiction/:id' element={<BooksContainer />}/>
+          <Route path='/audio/:id' element={<BooksContainer />}/>
+          <Route path='/kids/:id' element={<BooksContainer />}/>
+          <Route path='/manga/:id' element={<BooksContainer />}/>
+          <Route path='/games-activities/:id' element={<BooksContainer />}/>
         </Route>
         <Route path='/details' element={<BookDetails books={books} />}>
           <Route path='/details/:id' element={<BookDetails />}/>
