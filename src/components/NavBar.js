@@ -1,19 +1,33 @@
-import React from "react";
+import React from 'react';
 import './NavBar.css';
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
+import Categories from './Categories';
 
-const NavBar = () => {
+const NavBar = ({ updateBooks, displayHome }) => {
   return (
-    <nav className="nav-bar">
-      <div className="title-links">
+    <nav className='nav-bar'>
+      <div className='title-links'>
+        <NavLink to='/' id='combined-print-nonfiction' onClick={event => displayHome(event.target.id)} style={({ isActive }) => ({
+          borderBottom: isActive ? '2px solid #416A59' : '',
+          fontWeight: isActive ? 'bold' : '',
+          fontSize: isActive ? '25px' : '24px',
+          textDecoration: 'none',
+          color: 'inherit'
+        })}>Home</NavLink>
         <h1>Bibliotheca</h1>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/favorite-books">Favorites</NavLink>       
+        <NavLink to='/favorite-books' style={({ isActive }) => ({
+          borderBottom: isActive ? '2px solid #416A59' : '',
+          fontWeight: isActive ? 'bold' : '',
+          fontSize: isActive ? '25px' : '24px',
+          textDecoration: 'none',
+          color: 'inherit'
+        })}>Favorites</NavLink>       
       </div>
-      <form className="search-bar-container">
+      {/* <form className="search-bar-container">
         <input type="text"></input>
         <button className="submit-search">Search</button>
-      </form>
+      </form> */}
+      <Categories updateBooks={updateBooks}/>
     </nav>
   )
 }

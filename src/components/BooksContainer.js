@@ -3,7 +3,8 @@ import Book from "./Book";
 import "./BooksContainer.css"
 
 const BooksContainer = ({ books, favoriteBook }) => {
-  
+  console.log("hello");
+  console.log(books)
   const booksToDisplay = books.map(book => {
     const buttonDescription = 'Add to Favorites'
 
