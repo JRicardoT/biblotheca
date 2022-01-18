@@ -2,24 +2,24 @@ import React from "react";
 import Book from "./Book";
 import "./BooksContainer.css"
 
-const BooksContainer = ({ books, favoriteBook }) => {
-  
-  const booksToDisplay = books.map(book => {
-    const buttonDescription = 'Add to Favorites'
+const FavoriteBooks = ({ favoriteBooks, removeFavoriteBook }) => {
+
+  const booksToDisplay = favoriteBooks.map(book => {
+    const buttonDescription = 'Remove';
 
     return (
-      <Book 
+      <Book
         author={book.author}
         bookImage={book.book_image}
         title={book.title}
         id={book.title}
         key={book.title}
         buttonDescription={buttonDescription}
-        favoriteOrUnfavoriteBook={favoriteBook}
+        favoriteOrUnfavoriteBook={removeFavoriteBook}
       />
     )
   });
-  
+
   return (
     <section className="books-container">
       {booksToDisplay}
@@ -27,4 +27,4 @@ const BooksContainer = ({ books, favoriteBook }) => {
   )
 }
 
-export default BooksContainer;
+export default FavoriteBooks;

@@ -2,9 +2,9 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 const BookDetails = ({ books }) => {
-  
-  const bookId = useParams().id;
-  const bookToDisplay = books.find(book => book.title === bookId);
+
+  const {id} = useParams();
+  const bookToDisplay = books.find(book => book.title === id);
 
   return (
     <section>
