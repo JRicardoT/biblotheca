@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react";
-import "./App.css";
-import NavBar from "./NavBar";
-import BooksContainer from "./BooksContainer";
-import BookDetails from "./BookDetails";
-import { getBooks } from "../apiCalls";
-import { Route, Routes } from "react-router-dom";
-import FavoriteBooks from "./FavoriteBooks";
-import NonFictionContainer from "./NonFictionContainer";
-// import { categories } from "../utils";
+import React, { useEffect, useState } from 'react';
+import './App.css';
+import NavBar from './NavBar';
+import BooksContainer from './BooksContainer';
+import BookDetails from './BookDetails';
+import { getBooks } from '../apiCalls';
+import { Route, Routes } from 'react-router-dom';
+import FavoriteBooks from './FavoriteBooks';
 
 const App = () => {
 
@@ -16,21 +14,12 @@ const App = () => {
     const storedBooks = localStorage.getItem('favoriteBooks');
     return storedBooks ? JSON.parse(storedBooks) : [];
   });
-  // const [url, setUrl] = useState(`https://api.nytimes.com/svc/books/v3/lists/current/combined-print-nonfiction.json?api-key=M4w0uEsAYWmqh4MueC7oRCv9eOIZbkkU`)
-  // const [urlEndPoint, setUrlEndPoint] = useState(() => {
-  //   const storedEndPoint = JSON.parse(localStorage.getItem('endPoint'));
-  //   return storedEndPoint;
-  // });
-   const [urlEndPoint, setUrlEndPoint] = useState();
-
-  // useEffect(() => {
-  //   localStorage.setItem('endPoint', JSON.stringify(urlEndPoint));
-  // }, [urlEndPoint])
+  // const [urlEndPoint, setUrlEndPoint] = useState();
 
   useEffect(() => {
-    getBooks(urlEndPoint)
+    getBooks()
     .then(data => setBooks(data.results.books))
-  }, [urlEndPoint])
+  }, [])
 
   useEffect(() => {
     localStorage.setItem('favoriteBooks', JSON.stringify(favoriteBooks));
@@ -48,35 +37,27 @@ const App = () => {
     setFavoriteBooks(filteredFavoriteBooks);
   }
 
-  const updateBooks = (endPoint) => {
-    // console.log(endPoint);
-    setUrlEndPoint(endPoint);
+  const updateBooks = (newBooks) => {
+    console.log("updating", newBooks)
+    setBooks(newBooks)
   }
 
-  const displayHome = (endPoint) => {
-    // console.log(event.target.id)
-    setUrlEndPoint(endPoint)
-  }
-
-  // const routeToCategories = categories.map(category => {
-  //   return (
-  //     <Route path={`/${category.name.toLowerCase()}`} element={<BooksContainer />} />
-  //   )
-  // });
-  // console.log(books)
-  console.log("hi")
+  // const displayHome = (endPoint) => {
+  //   setUrlEndPoint(endPoint)
+  // }
   
   return (
     <main>
-      <NavBar updateBooks={updateBooks} displayHome={displayHome} />
+      <NavBar />
       <Routes>
-        <Route path='/' element={<BooksContainer books={books} favoriteBook={favoriteBook} />} >
-          <Route path='/non-fiction' element={<BooksContainer />}/>
-          <Route path='/fiction' element={<BooksContainer />}/>
-          <Route path='/audio' element={<BooksContainer />}/>
-          <Route path='/kids' element={<BooksContainer />}/>
-          <Route path='/manga' element={<BooksContainer />}/>
-          <Route path='/games-activities' element={<BooksContainer />}/>
+        <Route path='/' element={<BooksContainer books={books} favoriteBook={favoriteBook} updateBooks={updateBooks}/>} >
+          <Route path='/:id' element={<BooksContainer />}/>
+          <Route path='/non-fiction/:id' element={<BooksContainer />}/>
+          <Route path='/fiction/:id' element={<BooksContainer />}/>
+          <Route path='/audio/:id' element={<BooksContainer />}/>
+          <Route path='/kids/:id' element={<BooksContainer />}/>
+          <Route path='/manga/:id' element={<BooksContainer />}/>
+          <Route path='/games-activities/:id' element={<BooksContainer />}/>
         </Route>
         <Route path='/details' element={<BookDetails books={books} />}>
           <Route path='/details/:id' element={<BookDetails />}/>

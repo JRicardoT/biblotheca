@@ -3,11 +3,11 @@ import './NavBar.css';
 import { NavLink } from 'react-router-dom';
 import Categories from './Categories';
 
-const NavBar = ({ updateBooks, displayHome }) => {
+const NavBar = () => {
   return (
     <nav className='nav-bar'>
       <div className='title-links'>
-        <NavLink to='/' id='combined-print-nonfiction' onClick={event => displayHome(event.target.id)} style={({ isActive }) => ({
+        <NavLink to='/combined-print-nonfiction' style={({ isActive }) => ({
           borderBottom: isActive ? '2px solid #416A59' : '',
           fontWeight: isActive ? 'bold' : '',
           fontSize: isActive ? '25px' : '24px',
@@ -23,11 +23,7 @@ const NavBar = ({ updateBooks, displayHome }) => {
           color: 'inherit'
         })}>Favorites</NavLink>       
       </div>
-      {/* <form className="search-bar-container">
-        <input type="text"></input>
-        <button className="submit-search">Search</button>
-      </form> */}
-      <Categories updateBooks={updateBooks}/>
+      <Categories/>
     </nav>
   )
 }
