@@ -1,16 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Categories.css"
-import { categories } from "../utils";
 
 const Categories = ({ updateBooks }) => {
-  // const linksToCategories = categories.map(category => {
-  //   return (
-  //     <li key={category.endPoint}>
-  //       <Link to={`/${category.name.toLowerCase()}`} onClick={() => updateBooks(category.endPoint)}>{category.name}</Link>
-  //     </li>
-  //   )
-  // });
 
   return (
     <ul className="category-links">

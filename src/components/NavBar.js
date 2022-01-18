@@ -23,10 +23,6 @@ const NavBar = ({ updateBooks, displayHome }) => {
           color: 'inherit'
         })}>Favorites</NavLink>       
       </div>
-      {/* <form className="search-bar-container">
-        <input type="text"></input>
-        <button className="submit-search">Search</button>
-      </form> */}
       <Categories updateBooks={updateBooks}/>
     </nav>
   )
