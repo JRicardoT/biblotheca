@@ -1,0 +1,30 @@
+.category-links {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.link-list {
+  width: 16%;
+  height: 4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.link-to-category {
+  text-decoration: none;
+  color: rgb(65, 106, 89);
+}
+
+.separator {
+  border-left: 2px solid;
+}
+
+.active {
+  font-size: 25px;
+  text-decoration: none;
+  /* color: inherit; */
+  border-bottom: 2px solid rgb(65, 106, 89);
+  font-weight: bold;
+}
