@@ -1,6 +1,6 @@
 import React from "react";
 import Book from "./Book";
-import "./BooksContainer.css"
+import "./FavoriteBooks.css"
 
 const FavoriteBooks = ({ favoriteBooks, removeFavoriteBook }) => {
 
@@ -21,8 +21,8 @@ const FavoriteBooks = ({ favoriteBooks, removeFavoriteBook }) => {
   });
 
   return (
-    <section className="books-container">
-      {booksToDisplay}
+    <section className="favorite-books-container">
+      {favoriteBooks.length ? booksToDisplay: <p className="header-on-no-book">Add you favorite books here!</p>}
     </section>
   )
 }
