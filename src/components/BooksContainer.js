@@ -3,7 +3,10 @@ import Book from "./Book";
 import "./BooksContainer.css"
 
 const BooksContainer = ({ books, favoriteBook }) => {
+  
   const booksToDisplay = books.map(book => {
+    const buttonDescription = 'Add to Favorites'
+
     return (
       <Book 
         author={book.author}
@@ -11,7 +14,8 @@ const BooksContainer = ({ books, favoriteBook }) => {
         title={book.title}
         id={book.title}
         key={book.title}
-        favoriteBook={favoriteBook}
+        buttonDescription={buttonDescription}
+        favoriteOrUnfavoriteBook={favoriteBook}
       />
     )
   });
