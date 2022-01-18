@@ -1,0 +1,13 @@
+.header-on-no-book {
+  margin-top: 3%;
+  font-size: 25px;
+  color: #416A59;
+  font-weight: bold;
+}
+
+.favorite-books-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
