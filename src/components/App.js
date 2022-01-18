@@ -22,16 +22,19 @@ const App = () => {
   useEffect(() => {
     localStorage.setItem(`favoriteBooks`, JSON.stringify(favoriteBooks));
   }, [favoriteBooks])
-
+  
   const favoriteBook = (bookId) => {
     const favBook = books.find(book => book.title === bookId);
     if(!favoriteBooks.includes(favBook)) {
       setFavoriteBooks([...favoriteBooks, favBook])
     }
   }
+
+  const removeFavoriteBook = (bookId) => {
+    const filteredFavoriteBooks = favoriteBooks.filter(book => book.title !== bookId);
+    setFavoriteBooks(filteredFavoriteBooks);
+  }
   
-  console.log('outside>>>>',favoriteBooks)
-  console.log("outside of effect", books)
   return (
     <main>
       <NavBar />
@@ -40,7 +43,7 @@ const App = () => {
         <Route path='/details' element={<BookDetails books={books} />}>
           <Route path='/details/:id' element={<BookDetails />}/>
         </Route>
-        <Route path='favorite-books' element={<FavoriteBooks favoriteBooks={favoriteBooks}/>}/>
+        <Route path='/favorite-books' element={<FavoriteBooks favoriteBooks={favoriteBooks} removeFavoriteBook={removeFavoriteBook}/>}/>
       </Routes>
     </main>
   );

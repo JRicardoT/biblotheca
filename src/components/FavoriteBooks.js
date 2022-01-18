@@ -1,23 +1,27 @@
 import React from "react";
-import FavBook from "./FavBook";
+import Book from "./Book";
+import "./BooksContainer.css"
 
-const FavoriteBooks = ({ favoriteBooks }) => {
-  // const storedBooks = localStorage.getItem('favoriteBooks');
-  console.log(favoriteBooks)
+const FavoriteBooks = ({ favoriteBooks, removeFavoriteBook }) => {
+
   const booksToDisplay = favoriteBooks.map(book => {
+    const buttonDescription = 'Remove';
+
     return (
-      <FavBook
+      <Book
         author={book.author}
         bookImage={book.book_image}
         title={book.title}
         id={book.title}
         key={book.title}
+        buttonDescription={buttonDescription}
+        favoriteOrUnfavoriteBook={removeFavoriteBook}
       />
     )
   });
 
   return (
-    <section>
+    <section className="books-container">
       {booksToDisplay}
     </section>
   )
