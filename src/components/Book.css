@@ -22,7 +22,7 @@ button {
 }
 
 .book-cover:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
   cursor: pointer;
 }
 
@@ -34,4 +34,86 @@ button {
 
 .author-name {
   margin-top: 3%;
+}
+
+button:hover {
+  background-color: #416a59;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: #416a59;
+  transform: translateY(4px);
+}
+
+@media screen and (max-width: 1250px) {
+  button {
+    margin-top: 14%;
+  }
+
+  .book-title {
+    margin-top: 9%;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  button {
+    font-size: 90%;
+  }
+}
+
+@media screen and (max-width: 875px) {
+  button {
+    margin-top: 16%;
+  }
+
+  .book-title {
+    font-size: 15px;
+  }
+  .book-section {
+    width: 22%;
+  }
+}
+
+/* @media screen and (max-width: 830px) {
+  .book-section {
+    width: 22%;
+  }
+} */
+
+@media screen and (max-width: 600px) {
+  button {
+    margin-top: 4%;
+    font-size: 70%;
+  }
+
+  .book-title {
+    font-size: 10px;
+    margin-top: 14%;
+  }
+
+  .book-section {
+    height: 30vh;
+  }
+
+  .book-cover {
+    height: 60%;
+  }
+}
+
+@media screen and (min-width: 1960px) {
+  .book-section {
+    width: 10%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  button {
+    margin-top: 36%;
+    height: 11%;
+    font-size: 9px;
+  }
+  .book-section {
+    width: 20%;
+  }
 }

@@ -37,3 +37,28 @@ h4,
   width: 135px;
   height: 50px;
 }
+
+@media screen and (max-width: 600px) {
+  h3 {
+    font-size: 25px;
+  }
+
+  .book-author-details {
+    font-size: 22px;
+  }
+
+  .button-details {
+    width: 130px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .details-cover {
+    width: 35%;
+  }
+
+  .book-author-details {
+    font-size: 14px;
+  }
+}
