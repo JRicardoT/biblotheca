@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Book.css"
+import propTypes from "prop-types";
 
 const Book = ({ bookImage, title, id, favoriteOrUnfavoriteBook, buttonDescription }) => {
 
@@ -16,3 +17,11 @@ const Book = ({ bookImage, title, id, favoriteOrUnfavoriteBook, buttonDescriptio
 }
 
 export default Book;
+
+Book.propTypes = {
+  bookImage: propTypes.string.isRequired,
+  title: propTypes.string.isRequired,
+  id: propTypes.string.isRequired,
+  favoriteOrUnfavoriteBook: propTypes.func.isRequired,
+  buttonDescription: propTypes.string.isRequired
+}
