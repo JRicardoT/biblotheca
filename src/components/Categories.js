@@ -7,7 +7,7 @@ const Categories = ({ updateBooks }) => {
   return (
     <ul className="category-links">
       <li className="link-list">
-        <Link to='/non-fiction' className="link-to-category" onClick={() => updateBooks('combined-print-and-e-book-nonfiction')}>Non-Fiction</Link>
+        <Link to='/non-fiction' id='non-fiction' className="link-to-category" onClick={() => updateBooks('combined-print-and-e-book-nonfiction')}>Non-Fiction</Link>
       </li>
       <li className="link-list separator">
         <Link to='/fiction' className="link-to-category" onClick={() => updateBooks('combined-print-and-e-Book-fiction')}>Fiction</Link>
