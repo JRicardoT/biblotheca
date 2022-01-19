@@ -15,7 +15,7 @@ const NavBar = ({ updateBooks, displayHome }) => {
           color: 'inherit'
         })}>Home</NavLink>
         <h1>Bibliotheca</h1>
-        <NavLink to='/favorite-books' style={({ isActive }) => ({
+        <NavLink to='/favorite-books' id='favoriteBooks' style={({ isActive }) => ({
           borderBottom: isActive ? '2px solid #416A59' : '',
           fontWeight: isActive ? 'bold' : '',
           fontSize: isActive ? '25px' : '24px',
