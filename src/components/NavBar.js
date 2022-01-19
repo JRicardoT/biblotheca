@@ -2,6 +2,7 @@ import React from 'react';
 import './NavBar.css';
 import { NavLink } from 'react-router-dom';
 import Categories from './Categories';
+import propTypes from 'prop-types';
 
 const NavBar = ({ updateBooks, displayHome }) => {
   return (
@@ -29,3 +30,8 @@ const NavBar = ({ updateBooks, displayHome }) => {
 }
 
 export default NavBar;
+
+NavBar.propTypes = {
+  updateBooks: propTypes.func,
+  displayHome: propTypes.func.isRequired
+}

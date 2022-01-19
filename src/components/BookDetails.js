@@ -1,10 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import './BookDetails.css'
+import './BookDetails.css';
+import propTypes from "prop-types";
 
 const BookDetails = ({ books }) => {
 
-  const {id} = useParams();
+  const { id } = useParams();
   const bookToDisplay = books.find(book => book.title === id);
 
   return (
@@ -29,3 +30,9 @@ const BookDetails = ({ books }) => {
 }
 
 export default BookDetails;
+
+BookDetails.propTypes = {
+  books: propTypes.arrayOf(
+    propTypes.object
+  )
+}

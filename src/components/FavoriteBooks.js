@@ -1,6 +1,7 @@
 import React from "react";
 import Book from "./Book";
 import "./FavoriteBooks.css"
+import propTypes from "prop-types";
 
 const FavoriteBooks = ({ favoriteBooks, removeFavoriteBook }) => {
 
@@ -28,3 +29,10 @@ const FavoriteBooks = ({ favoriteBooks, removeFavoriteBook }) => {
 }
 
 export default FavoriteBooks;
+
+FavoriteBooks.propTypes = {
+  favoriteBooks: propTypes.arrayOf(
+    propTypes.object
+  ),
+  removeFavoriteBook: propTypes.func.isRequired
+}

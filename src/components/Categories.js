@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import propTypes from "prop-types";
 import "./Categories.css"
 
 const Categories = ({ updateBooks }) => {
@@ -29,3 +30,7 @@ const Categories = ({ updateBooks }) => {
 }
 
 export default Categories;
+
+Categories.propTypes = {
+  updateBooks: propTypes.func.isRequired
+}
