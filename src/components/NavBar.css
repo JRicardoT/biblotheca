@@ -42,3 +42,14 @@ input {
   background-color: #416a59;
   color: white;
 }
+
+@media screen and (max-width: 375px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  #combined-print-nonfiction,
+  #favoriteBooks {
+    font-size: 20px;
+  }
+}
