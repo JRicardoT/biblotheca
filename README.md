@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# CRAVR :spaghetti:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Turing FEE Final Solo Project 2108
+[Deployed Project](https://inspiring-kilby-f14863.netlify.app/)
 
-## Available Scripts
+## Table of Contents
+  - [Abstract](#Abstract)
+  - [Technologies](#Technologies)
+  - [Illustrations](#Illustrations)
+  - [Wins](#Wins)
+  - [Challenges](#Challenges)
+  - [Additions](#Additions)
+  - [Contributors](#Contributors)
+  - [Specs](#Specs)
 
-In the project directory, you can run:
+## Abstract
+An app for book lovers! Love to read but don't know what new adventure to get your eyes on next ? Biblotheca is a website that will keep you up to date with all the best sellers. You can save all of your favorite books and always come back to them. See a book that interests you?  Click on the book cover and the book details are displayed along with a link to where to buy that new book that you loved.
 
-### `npm start`
+## Technologies
+![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![image](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![image](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)   
+![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)  ![image](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white) ![image](https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white) 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Illustrations
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Home page view
+<img src='src/assets/home-view.gif'>  
 
-### `npm test`
+### Caterogy search display
+<img src='src/assets/category-display.gif'/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Favoriting functionality
+<img src='src/assets/favoriting.gif'/>
 
-### `npm run build`
+## Wins
+- Populating data from api endpoints
+- Making fetch url dynamic according to what category is chosen
+- Implement propTypes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Challenges
+- Working with an API with a daily request quota proved difficult with constant testing and debugging
+- Re-rendering the books list on router path change.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Additions
+- Allow the user to input the name of an author, a category, or the title of a book in a search bar and get new books based on that.
+- Adding a login function
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributors
+[Ricardo Tovar](https://github.com/JRicardoT) 
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Specs
+[Showcase Project](https://frontend.turing.edu/projects/module-3/showcase.html)
