@@ -1,6 +1,7 @@
 import React from "react";
 import Book from "./Book";
 import "./BooksContainer.css"
+import propTypes from "prop-types";
 
 const BooksContainer = ({ books, favoriteBook }) => {
   
@@ -28,3 +29,9 @@ const BooksContainer = ({ books, favoriteBook }) => {
 }
 
 export default BooksContainer;
+
+BooksContainer.propTypes = {
+  books: propTypes.arrayOf(
+    propTypes.object
+  )
+}
