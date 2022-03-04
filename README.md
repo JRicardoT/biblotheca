@@ -1,4 +1,4 @@
-# CRAVR :spaghetti:
+# Biblotheca 📖
 
 ### Turing FEE Final Solo Project 2108
 [Deployed Project](https://inspiring-kilby-f14863.netlify.app/)
